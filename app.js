@@ -5,13 +5,13 @@ const express = require('express') // 1
 const logger = require('morgan')
 const cors = require('cors')
 
-// const mongoose = require('mongoose')
+const mongoose = require('mongoose')
 
-// const DB_HOST = 'mongodb+srv://Oleg:TSPnuOyCDjOcxhPL@cluster0.d66ircb.mongodb.net/contacts_base?retryWrites=true&w=majority'
+const DB_HOST = 'mongodb+srv://Oleg:TSPnuOyCDjOcxhPL@cluster0.d66ircb.mongodb.net/contacts_base?retryWrites=true&w=majority'
 
-// mongoose.connect(DB_HOST)
-//   .then(() => console.log('Database connection successful'))
-//   .catch(error => console.log(error.message))
+mongoose.connect(DB_HOST)
+  .then(() => console.log('Database connection successful'))
+  .catch(error => console.log(error.message))
 
 const contactsRouter = require('./routes/api/contacts')
 
