@@ -1,12 +1,8 @@
-// https://www.youtube.com/watch?v=gQpWd0AdSNk - 58-10 хранить в репозитории; 1:40 dotenv
-
-
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 
 require('dotenv').config();
-
 
 const contactsRouter = require('./routes/api/contacts');
 

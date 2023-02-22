@@ -19,15 +19,21 @@ const contactSchema = new Schema({
 }, { versionKey: false });
 
 
+
 const addScheme = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().required(),
   phone: Joi.string().required(),
-  favorites: Joi.boolean()
+  favorite: Joi.boolean()
 });
 
-const schemas = { addScheme }
+const updateFavoriteSchema = Joi.object({
+  favorite: Joi.bool()
+  // favorite: Joi.bool().required()
+});
 
-const Book = model('contact', contactSchema);
+const schemas = { addScheme, updateFavoriteSchema }
 
-module.exports = { Book, schemas };
+const Contact = model('contact', contactSchema);
+
+module.exports = { Contact, schemas };
